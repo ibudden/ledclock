@@ -30,9 +30,9 @@ class Clock():
             offscreen_canvas = self.matrix.CreateFrameCanvas()
             font = graphics.Font()
             font.LoadFont("./6x13B.bdf")
-            textColor = graphics.Color(20, 20, 20)
+            textColor = graphics.Color(0, 0, 0)
             
-            xpos = 2
+            xpos = 1
             ypos = 14
             brightness = 4
 
