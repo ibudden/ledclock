@@ -36,13 +36,11 @@ class Clock():
             ypos = 14
             my_text = datetime.datetime.now().strftime("%H:%M")
 
-        while True:
-            
             while True:
                 offscreen_canvas.Clear()
                 
                 for y in range(0, self.matrix.height):
-                    self.matrix.drawLine(0, y, 15, y, self.matrix.Color333(7, 0, 0));
+                    self.matrix.drawLine(0, y, 15, y, graphics.Color(y+40, 0, 0));
                 
                 graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, my_text)
                 #pos -= 1
