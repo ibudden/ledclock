@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import time
+import datetime
 import sys
 import os
 
@@ -28,12 +29,12 @@ class Clock():
 
             offscreen_canvas = self.matrix.CreateFrameCanvas()
             font = graphics.Font()
-            font.LoadFont("/home/pi/rpi-rgb-led-matrix/fonts/helvR12.bdf")
+            font.LoadFont("/home/pi/rpi-rgb-led-matrix/fonts/6x13B.bdf")
             textColor = graphics.Color(50, 50, 50)
             
-            xpos = 1
-            ypos = 16
-            my_text = "15:49"
+            xpos = 2
+            ypos = 14
+            my_text = datetime.datetime.now().strftime("%I:%M")
 
             while True:
                 offscreen_canvas.Clear()
