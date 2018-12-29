@@ -33,8 +33,8 @@ class Clock():
             textColor = graphics.Color(0, 0, 0)
             
             xpos = 1
-            ypos = 14
-            brightness = 4
+            ypos = 13
+            brightness = 2
 
             while True:
                 #offscreen_canvas.Clear()
