@@ -39,8 +39,8 @@ class Clock():
             while True:
                 offscreen_canvas.Clear()
                 
-                for y in range(0, self.matrix.height):
-                    graphics.drawLine(0, y, 15, y, graphics.Color(y+40, 0, 0));
+                for y in range(0, self.matrix.height):        
+                    graphics.DrawLine(self.matrix, 0, y, 15, y, graphics.Color(y+40, 0, 0))
                 
                 graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, my_text)
                 #pos -= 1
