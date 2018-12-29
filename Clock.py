@@ -29,16 +29,22 @@ class Clock():
 
             offscreen_canvas = self.matrix.CreateFrameCanvas()
             font = graphics.Font()
-            font.LoadFont("/home/pi/rpi-rgb-led-matrix/fonts/6x13B.bdf")
-            textColor = graphics.Color(50, 50, 50)
+            font.LoadFont("./6x13B.bdf")
+            textColor = graphics.Color(40, 40, 40)
             
             xpos = 2
             ypos = 14
-            my_text = datetime.datetime.now().strftime("%I:%M")
+            my_text = datetime.datetime.now().strftime("%H:%M")
 
+        while True:
+            
             while True:
                 offscreen_canvas.Clear()
-                len = graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, my_text)
+                
+                for y in range(0, self.matrix.height):
+                    self.matrix.drawLine(0, y, 15, y, self.matrix.Color333(7, 0, 0));
+                
+                graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, my_text)
                 #pos -= 1
                 #if (pos + len < 0):
                 #    pos = offscreen_canvas.width
