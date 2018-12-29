@@ -38,21 +38,19 @@ class Clock():
             brightness = 2
 
             while True:
-                time_pause = int(datetime.datetime.now().strftime("%-S"))
-                if time_pause == 0
                     break
             
             while True:
-                #offscreen_canvas.Clear()
+                time_pause = int(datetime.datetime.now().strftime("%-S"))
                 
-                for y in range(0, self.matrix.height):        
-                    graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
-                
-                time_string = datetime.datetime.now().strftime("%H:%M")
-                graphics.DrawText(self.matrix, font, xpos, ypos, textColor, time_string)
-                
-                time.sleep(60)
-                #offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
+                if time_pause == 0:
+                    for y in range(0, self.matrix.height):        
+                        graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
+                    
+                    time_string = datetime.datetime.now().strftime("%H:%M")
+                    graphics.DrawText(self.matrix, font, xpos, ypos, textColor, time_string)
+                    
+                time.sleep(1)
 
 
         except KeyboardInterrupt:
