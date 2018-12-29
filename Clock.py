@@ -20,7 +20,7 @@ class Clock():
         options = RGBMatrixOptions()
         options.rows = 16
         options.cols = 32
-        options.show_refresh_rate = 1
+        #options.show_refresh_rate = 1
         
         self.matrix = RGBMatrix(options = options)
 
