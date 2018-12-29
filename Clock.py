@@ -35,10 +35,10 @@ class Clock():
             
             xpos = 1
             ypos = 14
-            brightness = 2
+            brightness = 1
 
-            while True:
-                    break
+            graphics.DrawText(self.matrix, font, xpos, ypos, graphics.Color(20, 20, 20), "...")
+            
             
             while True:
                 time_pause = int(datetime.datetime.now().strftime("%-S"))
