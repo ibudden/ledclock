@@ -29,18 +29,20 @@ class Clock():
             offscreen_canvas = self.matrix.CreateFrameCanvas()
             font = graphics.Font()
             font.LoadFont("/home/pi/rpi-rgb-led-matrix/fonts/7x13.bdf")
-            textColor = graphics.Color(255, 255, 0)
-            pos = offscreen_canvas.width
+            textColor = graphics.Color(50, 50, 50)
+            
+            xpos = 1
+            ypos = 1
             my_text = "15:49"
 
             while True:
                 offscreen_canvas.Clear()
-                len = graphics.DrawText(offscreen_canvas, font, pos, 10, textColor, my_text)
-                pos -= 1
-                if (pos + len < 0):
-                    pos = offscreen_canvas.width
+                len = graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, my_text)
+                #pos -= 1
+                #if (pos + len < 0):
+                #    pos = offscreen_canvas.width
 
-                time.sleep(0.05)
+                time.sleep(1)
                 offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
 
 
