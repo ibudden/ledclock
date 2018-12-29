@@ -31,7 +31,7 @@ class Clock():
             font.LoadFont("/home/pi/rpi-rgb-led-matrix/fonts/7x13.bdf")
             textColor = graphics.Color(255, 255, 0)
             pos = offscreen_canvas.width
-            my_text = self.args.text
+            my_text = "15:49"
 
             while True:
                 offscreen_canvas.Clear()
