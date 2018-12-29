@@ -34,15 +34,17 @@ class Clock():
             
             xpos = 2
             ypos = 14
-            my_text = datetime.datetime.now().strftime("%H:%M")
+            brightness = 4
 
             while True:
                 offscreen_canvas.Clear()
                 
-                graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, my_text)
                 
                 for y in range(0, self.matrix.height):        
-                    graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*5, 0, 0))
+                    graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
+                
+                time_string = datetime.datetime.now().strftime("%H:%M")
+                graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, time_string)
                 
                 #pos -= 1
                 #if (pos + len < 0):
