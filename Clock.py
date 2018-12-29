@@ -20,6 +20,7 @@ class Clock():
         options = RGBMatrixOptions()
         options.rows = 16
         options.cols = 32
+        options.show_refresh_rate = 1
         
         self.matrix = RGBMatrix(options = options)
 
@@ -39,16 +40,12 @@ class Clock():
             while True:
                 #offscreen_canvas.Clear()
                 
-                time_string = datetime.datetime.now().strftime("%H:%M")
-                graphics.DrawText(self.matrix, font, xpos, ypos, textColor, time_string)
-                
                 for y in range(0, self.matrix.height):        
                     graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
                 
-                #pos -= 1
-                #if (pos + len < 0):
-                #    pos = offscreen_canvas.width
-
+                time_string = datetime.datetime.now().strftime("%H:%M")
+                graphics.DrawText(self.matrix, font, xpos, ypos, textColor, time_string)
+                
                 time.sleep(1)
                 #offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
 
