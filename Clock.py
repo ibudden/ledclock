@@ -38,6 +38,11 @@ class Clock():
             brightness = 2
 
             while True:
+                time_pause = int(datetime.datetime.now().strftime("%-S"))
+                if time_pause == 0
+                    break
+            
+            while True:
                 #offscreen_canvas.Clear()
                 
                 for y in range(0, self.matrix.height):        
