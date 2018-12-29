@@ -40,8 +40,8 @@ class Clock():
                 offscreen_canvas.Clear()
                 
                 
-                for y in range(0, self.matrix.height):        
-                    graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
+                #for y in range(0, self.matrix.height):        
+                #    graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
                 
                 time_string = datetime.datetime.now().strftime("%H:%M")
                 graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, time_string)
