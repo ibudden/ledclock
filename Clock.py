@@ -28,7 +28,7 @@ class Clock():
 
             offscreen_canvas = self.matrix.CreateFrameCanvas()
             font = graphics.Font()
-            font.LoadFont("/home/pi/rpi-rgb-led-matrix/fonts/6x13O.bdf")
+            font.LoadFont("/home/pi/rpi-rgb-led-matrix/fonts/helvR12.bdf")
             textColor = graphics.Color(50, 50, 50)
             
             xpos = 1
