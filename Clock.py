@@ -46,7 +46,7 @@ class Clock():
                 time_string = datetime.datetime.now().strftime("%H:%M")
                 graphics.DrawText(self.matrix, font, xpos, ypos, textColor, time_string)
                 
-                time.sleep(1)
+                time.sleep(60)
                 #offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
 
 
