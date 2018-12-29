@@ -12,9 +12,8 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 class Clock():
     
     def __init__(self): # , *args, **kwargs
-        start(self)
+        print("Initialising...")
     
-        
     def start(self):
         
         options = RGBMatrixOptions()
@@ -50,4 +49,5 @@ class Clock():
             sys.exit(0)
         
 
-Clock()
+clock = Clock()
+clock.start()
