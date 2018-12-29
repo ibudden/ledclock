@@ -50,7 +50,7 @@ class Clock():
                     elif hour_of_day > 9:
                         brightness = 1
                     else:
-                        brightness = 3
+                        brightness = 4
                     # draw a background
                     for y in range(0, self.matrix.height):        
                         graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
