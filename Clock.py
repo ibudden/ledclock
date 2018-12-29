@@ -36,18 +36,26 @@ class Clock():
             xpos = 1
             ypos = 14
             brightness = 1
-
-            graphics.DrawText(self.matrix, font, xpos, ypos, graphics.Color(20, 20, 20), "...")
-            
             
             while True:
-                time_pause = int(datetime.datetime.now().strftime("%-S"))
+                # only update at 0 seconds
+                time_now = datetime.datetime.now()
+                time_pause = int(time_now.strftime("%-S"))
                 
                 if time_pause == 0:
+                    # different brightness at different times
+                    hour_of_day = int(time_now.strftime("%-H"))
+                    if hour_of_day < 7:
+                        brightness = 1
+                    elif hour_of_day > 9:
+                        brightness = 1
+                    else:
+                        brightness = 3
+                    # draw a background
                     for y in range(0, self.matrix.height):        
                         graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*brightness, 0, 0))
-                    
-                    time_string = datetime.datetime.now().strftime("%H:%M")
+                    # type time
+                    time_string = time_now.strftime("%H:%M")
                     graphics.DrawText(self.matrix, font, xpos, ypos, textColor, time_string)
                     
                 time.sleep(1)
