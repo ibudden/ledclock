@@ -32,7 +32,7 @@ class Clock():
             textColor = graphics.Color(50, 50, 50)
             
             xpos = 1
-            ypos = 1
+            ypos = 16
             my_text = "15:49"
 
             while True:
