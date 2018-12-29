@@ -30,7 +30,7 @@ class Clock():
             offscreen_canvas = self.matrix.CreateFrameCanvas()
             font = graphics.Font()
             font.LoadFont("./6x13B.bdf")
-            textColor = graphics.Color(40, 40, 40)
+            textColor = graphics.Color(20, 20, 20)
             
             xpos = 2
             ypos = 14
@@ -39,10 +39,11 @@ class Clock():
             while True:
                 offscreen_canvas.Clear()
                 
-                for y in range(0, self.matrix.height):        
-                    graphics.DrawLine(self.matrix, 0, y, 15, y, graphics.Color(y+40, 0, 0))
-                
                 graphics.DrawText(offscreen_canvas, font, xpos, ypos, textColor, my_text)
+                
+                for y in range(0, self.matrix.height):        
+                    graphics.DrawLine(self.matrix, 0, y, 31, y, graphics.Color(y*5, 0, 0))
+                
                 #pos -= 1
                 #if (pos + len < 0):
                 #    pos = offscreen_canvas.width
