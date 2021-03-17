@@ -18,7 +18,7 @@ class Clock():
 
     def color(self, y, brightness):
 
-        colorDays = [ [1,0,0], [0,1,0], [0,0,0], [1,0,1], [1,1,0], [0,1,1], [1,0,1] ]
+        colorDays = [ [1,0,0], [1,0.5,0], [1,1,0], [0,1,0], [0,0,1], [0.5,0,0.75], [1,0,1] ]
         dayOfWeek = datetime.datetime.today().weekday()
         colorToday = colorDays[dayOfWeek]
 
